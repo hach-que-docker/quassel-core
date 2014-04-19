@@ -2,7 +2,7 @@ FROM hachque/systemd-none
 MAINTAINER James Rhodes
 
 # Install requirements
-RUN zypper --non-interactive in quassel-core
+RUN zypper --non-interactive in quassel-core ca-certificates ca-certificates-mozilla ca-certificates-cacert
 
 # Expose Quassel core on 4242
 EXPOSE 4242
