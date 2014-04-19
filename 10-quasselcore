@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ ! -e /var/lib/quasselcore ]; then
+    echo "Please map a host directory to /var/lib/quasselcore!"
+    exit 1
+fi
+
+# Start quassel core
+/usr/bin/quasselcore --configdir=/var/lib/quasselcore --port=4242 &
+pid=$!
+
+echo $pid > /run/watch/quasselcore
+
