@@ -14,7 +14,7 @@ What do these parameters do?
     --name quassel-main = the name of the container
     hachque/quassel-core = the name of the image
 
-A systemd configuration file may look like:
+This image is intended to be used in such a way that a new container is created each time it is started, instead of starting and stopping a pre-existing container from this image.  You should configure your service startup so that the container is stopped and removed each time.  A systemd configuration file may look like:
 
     [Unit]
     Description=Quassel Main instance
