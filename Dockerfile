@@ -14,5 +14,8 @@ ADD 10-quasselcore /etc/init.simple/10-quasselcore
 # lack of a host mapping).
 RUN rmdir /var/lib/quasselcore
 
+# Remove 00-patch so that launching in pre-baked images runs faster
+RUN rm /etc/init.simple/00-patch
+
 # Set /init as the default
 CMD ["/init"]
